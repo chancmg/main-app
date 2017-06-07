@@ -24,7 +24,7 @@ var vehicleSchema=new Schema({
 	vehicledirection:String,
 	gpsstatus:String,
 	ignitionnumber:String,
-	epoch_TIME:Date
+	epoch_TIME:Number
 });
 
 var vmodel=mongoose.model('Vehiclelist',vehicleSchema);

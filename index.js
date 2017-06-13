@@ -8,7 +8,6 @@ var url="http://59.144.132.170/RBSKAPI/rest/CallService/All_vehicles";
 
 
 //using bodyParser
-
 app.use(bodyParser.urlencoded({ extended:true }));
 app.use(bodyParser.json());
 
@@ -97,11 +96,12 @@ router.route('/vehicles/:vehiclenumber').get(function(req,res)
 
 router.route('/vehicles').get(function(req,res)
 {
-	vmodel.paginate({},{ page:req.query.page,limit:10 },function(err,result)
+	s=10*(req.query.page-1);
+	vmodel.find().skip(s).limit(10).exec('find',function(err,result)
 {
 	if(err)
 		res.send(err);
-	res.json(result.docs);
+	res.json(result);
 });
 });
 

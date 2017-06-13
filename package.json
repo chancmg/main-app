@@ -17,8 +17,10 @@
   },
   "homepage": "https://github.com/chancmg/main-app#readme",
   "dependencies": {
+    "body-parser": "^1.17.2",
     "express": "^4.15.3",
     "mongoose": "^4.10.5",
+    "mongoose-paginate": "^5.0.3",
     "request": "^2.81.0"
   }
 }
